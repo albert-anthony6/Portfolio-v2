@@ -1,19 +1,25 @@
 <template>
   <div class="app">
-    <Main />
+    <section>
+      <Navigation />
+      <Main />
+    </section>
   </div>
 </template>
 
 <script>
 import Main from './views/Main.vue';
+import Navigation from './components/Navigation.vue';
 
 export default {
   name: 'App',
   components: {
     Main,
+    Navigation,
   },
 };
 </script>
+, Navigation
 
 <style lang="scss">
 @import './assets/themes/_themes.scss';

@@ -1,5 +1,5 @@
 <template>
-  <section class="main">
+  <div class="main">
     <div class="code-icon">
       <div class="left" />
       <div class="middle" />
@@ -10,7 +10,7 @@
       <div>Dev for hire!</div>
     </div>
     <img src="../assets/icons/hello.svg" alt="Hello" class="hello" />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -29,6 +29,10 @@ export default {
     transform: translateX(-50%);
   }
   .contact-button {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 55px;
     overflow: hidden;
