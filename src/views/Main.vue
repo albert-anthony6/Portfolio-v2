@@ -5,10 +5,6 @@
       <div class="middle" />
       <div class="right" />
     </div>
-    <div class="contact-button button">
-      <div>Contact Me</div>
-      <div>Dev for hire!</div>
-    </div>
     <img src="../assets/icons/hello.svg" alt="Hello" class="hello-svg" />
     <div class="left-content">
       <p><span class="hello">Hello</span>, I'm</p>
@@ -20,12 +16,13 @@
       <p class="title">Frontend Web Developer</p>
       <p><span>This is my portfolio</span>.</p>
     </div>
+    <div class="contact-button button">
+      <div>Contact Me</div>
+      <div>Dev for hire!</div>
+    </div>
     <div class="right-content">
       <a>Projects</a>
-      <a
-        >About <br />
-        Me</a
-      >
+      <a>About Me</a>
       <a>Resume</a>
       <a href="https://24g.com/" target="_blank">24G</a>
       <a href="https://github.com/albert-anthony6" target="_blank">Github</a>
@@ -48,6 +45,11 @@ export default {
   width: 100%;
   height: 100%;
   text-align: left;
+  @include tab {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .left-content {
     margin-left: 5.5%;
     @include xl {
@@ -62,8 +64,9 @@ export default {
       transform: translate(-50%, -50%);
       width: 500px;
     }
-    @include xxs {
-      top: 45%;
+    @include tab {
+      position: static;
+      margin: 150px 0 0 500px;
     }
     span {
       color: red;
@@ -122,27 +125,15 @@ export default {
       grid-template-columns: 100px 100px 100px;
     }
     @include tab {
-      position: relative;
-      margin: 0 auto;
-      margin-bottom: -60vh;
+      position: static;
+      margin: 20px 0 80px 0;
+      width: auto;
     }
     @include sm {
-      margin-bottom: -70vh;
+      margin: 0 0 60px 0;
+      grid-gap: 7px;
       grid-template-rows: 100px 100px 100px;
       grid-template-columns: 100px 100px;
-    }
-    @include sm {
-      grid-gap: 7px;
-      grid-template-rows: 85px 85px 85px;
-      grid-template-columns: 85px 85px;
-    }
-    @include xs {
-      grid-template-rows: 75px 75px 75px;
-      grid-template-columns: 75px 75px;
-    }
-    @include xxs {
-      grid-template-rows: 65px 65px 65px;
-      grid-template-columns: 65px 65px;
     }
     a {
       font-family: $pattaya;
@@ -160,21 +151,6 @@ export default {
         border-radius: 20%;
         transform: translateY(-10px);
         box-shadow: 0 5px 12px #635569;
-      }
-      br {
-        display: none;
-        @include xxs {
-          display: block;
-        }
-      }
-      @include sm {
-        font-size: 1.6rem;
-      }
-      @include xs {
-        font-size: 1.4rem;
-      }
-      @include xxs {
-        font-size: 1.2rem;
       }
     }
   }
@@ -205,6 +181,10 @@ export default {
     text-align: center;
     &:hover div {
       transform: translateY(-140%);
+    }
+    @include tab {
+      position: static;
+      margin: 0 0 0 200px;
     }
     div {
       transition: all 0.2s ease;
