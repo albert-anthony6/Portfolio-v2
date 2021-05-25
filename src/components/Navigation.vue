@@ -1,14 +1,15 @@
 <template>
-  <div class="navigation">
-    <input type="checkbox" id="active" />
+  <div ref="navigation" class="navigation">
+    <input @click="toggleShrink" type="checkbox" id="active" />
     <div class="wrapper">
       <label for="active" class="menu-button">
         <span class="burger-icon" />
       </label>
       <ul class="menu">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About Me</a></li>
         <li><a href="#">Projects</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Resume</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
@@ -18,6 +19,17 @@
 <script>
 export default {
   name: 'Navigation',
+  methods: {
+    toggleShrink(event) {
+      if (event.target.checked) {
+        this.$refs.navigation.classList.remove('shrink');
+        this.$refs.navigation.classList.add('unshrink');
+      } else {
+        this.$refs.navigation.classList.remove('unshrink');
+        this.$refs.navigation.classList.add('shrink');
+      }
+    },
+  },
 };
 </script>
 
@@ -30,6 +42,7 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 30px;
+  clip-path: circle(100px at calc(100% - 86px) 74px);
   #active {
     display: none;
   }
@@ -124,7 +137,7 @@ export default {
         margin-bottom: 15px;
       }
       a {
-        font-size: 42px;
+        font-size: 4.2rem;
         font-weight: 500;
         color: $secondary;
         border-bottom: 2px solid transparent;
@@ -135,5 +148,11 @@ export default {
       }
     }
   }
+}
+.shrink {
+  clip-path: circle(100px at calc(100% - 86px) 74px);
+}
+.unshrink {
+  clip-path: none;
 }
 </style>
