@@ -15,3 +15,45 @@ $shadow-light: #fff;
 
 $poppins: 'Poppins', Avenir, Helvetica, Arial, sans-serif;
 $pattaya: 'Pattaya', Avenir, Helvetica, Arial, sans-serif;
+
+@mixin sm {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin sm-tab {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin mdh {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mdh {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
