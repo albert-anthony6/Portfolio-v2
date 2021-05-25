@@ -161,6 +161,12 @@ export default {
         transform: translateY(-10px);
         box-shadow: 0 5px 12px #635569;
       }
+      br {
+        display: none;
+        @include xxs {
+          display: block;
+        }
+      }
       @include sm {
         font-size: 1.6rem;
       }

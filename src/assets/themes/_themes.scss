@@ -10,10 +10,7 @@ html {
 }
 html,
 body {
-  overflow: hidden;
-  @include tab {
-    overflow-y: scroll;
-  }
+  overflow-x: hidden;
 }
 body {
   background-image: linear-gradient(
