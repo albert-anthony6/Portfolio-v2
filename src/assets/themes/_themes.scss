@@ -8,6 +8,13 @@
 html {
   font-size: 62.5%;
 }
+html,
+body {
+  overflow: hidden;
+  @include tab {
+    overflow-y: scroll;
+  }
+}
 body {
   background-image: linear-gradient(
     to bottom right,
@@ -18,8 +25,14 @@ body {
   text-align: center;
   font-family: $poppins;
   padding: 70px;
-  font-size: 1.6em;
-  overflow: hidden;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  @include sm {
+    padding: 40px;
+  }
+  @include xs {
+    padding: 20px;
+  }
 }
 section {
   position: relative;
@@ -29,6 +42,9 @@ section {
   width: 100%;
   height: 85vh;
   border-radius: 30px;
+  @include sm {
+    height: 100vh;
+  }
 }
 ul {
   list-style: none;
@@ -71,33 +87,66 @@ a {
   width: auto;
   filter: blur(4px);
   z-index: -1;
-  animation: move 5s infinite ease;
+  animation: move-middle 5s infinite ease;
+  @include xxl {
+    top: 40%;
+    animation: move-top 5s infinite ease;
+  }
+  @include sm {
+    top: 30%;
+    animation: move-top-sm 5s infinite ease;
+  }
   .left,
   .right,
   .middle {
     width: 250px;
     height: 250px;
     border-radius: 10px;
+    @include xxl {
+      width: 150px;
+      height: 150px;
+    }
+    @include sm {
+      width: 100px;
+      height: 100px;
+    }
   }
   .middle {
     border-left: 40px solid #000;
     transform: rotate(30deg);
     height: 350px;
+    @include xxl {
+      height: 200px;
+      margin-right: 100px;
+    }
+    @include sm {
+      height: 150px;
+      margin-right: 145px;
+      border-left: 30px solid #000;
+    }
   }
   .left {
     border-left: 40px solid #000;
     border-bottom: 40px solid #000;
     transform: rotate(45deg);
+    @include sm {
+      border-left: 30px solid #000;
+      border-bottom: 30px solid #000;
+    }
   }
   .right {
     border-right: 40px solid #000;
     border-bottom: 40px solid #000;
     transform: rotate(-45deg);
     margin-left: -200px;
+    @include sm {
+      border-right: 30px solid #000;
+      border-bottom: 30px solid #000;
+    }
   }
 }
 
-@keyframes move {
+@keyframes move-middle {
   from {
     opacity: 0.2;
     top: 50%;
@@ -109,5 +158,35 @@ a {
   to {
     opacity: 0.2;
     top: 50%;
+  }
+}
+
+@keyframes move-top {
+  from {
+    opacity: 0.2;
+    top: 40%;
+  }
+  50% {
+    opacity: 1;
+    top: 23%;
+  }
+  to {
+    opacity: 0.2;
+    top: 40%;
+  }
+}
+
+@keyframes move-top-sm {
+  from {
+    opacity: 0.2;
+    top: 30%;
+  }
+  50% {
+    opacity: 1;
+    top: 16%;
+  }
+  to {
+    opacity: 0.2;
+    top: 30%;
   }
 }

@@ -19,13 +19,11 @@ export default {
   },
 };
 </script>
-, Navigation
 
 <style lang="scss">
 @import './assets/themes/_themes.scss';
 
 .app {
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

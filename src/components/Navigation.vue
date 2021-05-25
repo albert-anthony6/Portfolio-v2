@@ -43,6 +43,7 @@ export default {
   height: 100%;
   border-radius: 30px;
   clip-path: circle(100px at calc(100% - 86px) 74px);
+  z-index: 999;
   #active {
     display: none;
   }

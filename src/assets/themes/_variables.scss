@@ -16,6 +16,18 @@ $shadow-light: #fff;
 $poppins: 'Poppins', Avenir, Helvetica, Arial, sans-serif;
 $pattaya: 'Pattaya', Avenir, Helvetica, Arial, sans-serif;
 
+@mixin xxs {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media (max-width: 600px) {
     @content;
@@ -40,12 +52,6 @@ $pattaya: 'Pattaya', Avenir, Helvetica, Arial, sans-serif;
   }
 }
 
-@mixin mdh {
-  @media (max-width: 1000px) {
-    @content;
-  }
-}
-
 @mixin lg {
   @media (max-width: 1200px) {
     @content;
@@ -53,7 +59,13 @@ $pattaya: 'Pattaya', Avenir, Helvetica, Arial, sans-serif;
 }
 
 @mixin xl {
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (max-width: 1600px) {
     @content;
   }
 }
