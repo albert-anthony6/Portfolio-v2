@@ -2,19 +2,17 @@
   <div class="app">
     <section>
       <Navigation />
-      <Main />
+      <router-view />
     </section>
   </div>
 </template>
 
 <script>
-import Main from './views/Main.vue';
 import Navigation from './components/Navigation.vue';
 
 export default {
   name: 'App',
   components: {
-    Main,
     Navigation,
   },
 };

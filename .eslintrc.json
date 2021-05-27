@@ -17,5 +17,5 @@
     "parser": "babel-eslint"
   },
   "plugins": ["prettier", "vue"],
-  "rules": { "no-tabs": "off", "linebreak-style": 0 }
+  "rules": { "no-tabs": "off", "linebreak-style": 0, "max-len": 0 }
 }
